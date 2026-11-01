@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://api.github.com; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>لوحة التحكم · بوك بيكيا</title>
+<link rel="icon" href="favicon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;700&amp;display=swap">
+<style>
+:root{--navy:#283467;--yellow:#ffd52c;--turq:#3fe3df;--turq-d:#17a9a6;--orange:#f7a21b;--red:#d9534f;--bg:#f3fbfb;--card:#fff;--ink:#283467;--soft:#56618f;--line:#d3ebea;--chip:#e3f6f5;--r:16px;
+--body:"IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;--display:"Lalezar","IBM Plex Sans Arabic",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#121935;--card:#1b2350;--ink:#eef1ff;--soft:#aab3dc;--line:#2e3970;--chip:#232d5c;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+button,input,select,textarea{font:inherit;color:inherit}
+[hidden]{display:none!important}
+.top{position:sticky;top:0;z-index:20;background:var(--navy);color:#fff;display:flex;align-items:center;gap:12px;padding:10px 16px;flex-wrap:wrap}
+.top h1{font-family:var(--display);font-weight:400;font-size:26px;margin:0}
+.top .sp{flex:1}
+.top a{color:var(--yellow)}
+.status{font-size:14px;color:#cfd6f5}
+.status.dirty{color:var(--yellow);font-weight:700}
+.wrap{max-width:1080px;margin:0 auto;padding:16px}
+.btn{border:0;border-radius:12px;padding:10px 16px;font-weight:700;cursor:pointer;background:var(--chip);color:var(--ink)}
+.btn.y{background:var(--yellow);color:var(--navy);box-shadow:0 4px 0 #d9a900}
+.btn.n{background:var(--navy);color:var(--yellow)}
+.btn.t{background:var(--turq-d);color:#fff}
+.btn.r{background:transparent;color:var(--red);box-shadow:inset 0 0 0 2px var(--red)}
+.btn.sm{padding:6px 10px;font-size:14px;border-radius:10px}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.card{background:var(--card);border-radius:var(--r);box-shadow:0 0 0 2px var(--line);padding:16px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.tab{border:0;border-radius:999px;padding:8px 16px;background:var(--card);box-shadow:0 0 0 2px var(--line);font-weight:700;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--navy);color:var(--yellow);box-shadow:none}
+label.f{display:grid;gap:4px;font-size:14px;font-weight:700}
+label.f small{font-weight:400;color:var(--soft)}
+input[type=text],input[type=number],input[type=password],input[type=tel],select,textarea{width:100%;border:2px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--bg);font-size:16px}
+textarea{min-height:70px;resize:vertical}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:700px){.g2,.g3{grid-template-columns:1fr}}
+.stack{display:grid;gap:12px}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.help{background:color-mix(in srgb,var(--turq) 16%,var(--card));border-radius:12px;padding:12px 14px;font-size:14.5px}
+.help ol{margin:6px 0 0;padding-inline-start:20px}
+.warn{background:color-mix(in srgb,var(--orange) 18%,var(--card));border-radius:12px;padding:10px 14px;font-size:14.5px}
+.list{display:grid;gap:10px}
+.bk{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;background:var(--card);border-radius:14px;box-shadow:0 0 0 2px var(--line);padding:8px}
+.bk img{width:64px;height:64px;object-fit:cover;border-radius:10px;background:var(--chip)}
+.bk b{display:block;line-height:1.35}
+.bk .m{font-size:13px;color:var(--soft)}
+.bk.off{opacity:.55}
+@media (max-width:560px){.bk{grid-template-columns:56px 1fr}.bk img{width:56px;height:56px}.bk .acts{grid-column:1/-1;justify-content:flex-start}}
+.pill{display:inline-block;font-size:12px;border-radius:999px;padding:0 8px;background:var(--chip);margin-inline-start:4px}
+.pill.o{background:var(--orange);color:var(--navy)}
+.pill.h{background:#9aa3c7;color:#fff}
+.acts{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+dialog{border:0;border-radius:20px;padding:0;width:min(760px,calc(100% - 20px));max-height:calc(100% - 20px);background:var(--card);color:var(--ink);box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+dialog::backdrop{background:rgba(10,14,35,.55)}
+.dh{position:sticky;top:0;background:var(--navy);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;z-index:2}
+.dh h2{margin:0;font-family:var(--display);font-weight:400;font-size:24px}
+.db{padding:16px;display:grid;gap:12px}
+.df{position:sticky;bottom:0;background:var(--card);border-top:2px solid var(--line);padding:12px 16px;display:flex;gap:8px;justify-content:flex-end}
+.imgs{display:flex;gap:8px;flex-wrap:wrap}
+.imgs figure{margin:0;position:relative;width:86px}
+.imgs img{width:86px;height:86px;object-fit:cover;border-radius:10px;background:var(--chip);display:block}
+.imgs figure button{position:absolute;top:2px;inset-inline-end:2px;border:0;border-radius:50%;width:24px;height:24px;background:var(--red);color:#fff;cursor:pointer;line-height:1}
+.imgs figure.new img{outline:3px solid var(--yellow)}
+.cover{display:flex;gap:12px;align-items:center}
+.cover img{width:110px;height:110px;object-fit:cover;border-radius:12px;background:var(--chip)}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--navy);color:var(--yellow);padding:12px 20px;border-radius:999px;z-index:60;font-weight:700}
+.cat-row{display:grid;grid-template-columns:1fr 1fr 70px 140px auto;gap:8px;align-items:end}
+@media (max-width:700px){.cat-row{grid-template-columns:1fr 1fr}}
+.swatch{width:100%;height:42px;border-radius:10px;border:2px solid var(--line);padding:0}
+.txt-block{border-top:2px solid var(--line);padding-top:12px}
+.txt-block:first-child{border-top:0;padding-top:0}
+.prog{height:10px;border-radius:99px;background:var(--chip);overflow:hidden}
+.prog span{display:block;height:100%;background:var(--turq-d);width:0;transition:width .2s}
+</style>
+<script src="panel-918d56300e1f.js" defer></script>
+</head>
+<body>
+<header class="top">
+  <h1>لوحة التحكم</h1>
+  <span class="status" id="status">مش متوصل</span>
+  <span class="sp"></span>
+  <a href="./" target="_blank" rel="noopener">افتح الموقع ↗</a>
+  <button class="btn y" id="publish" type="button" disabled>انشر التعديلات</button>
+</header>
+
+<main class="wrap">
+  <!-- الدخول -->
+  <section id="login" class="stack">
+    <div class="card stack">
+      <h2 style="margin:0">الدخول</h2>
+      <div class="help">
+        اللوحة دي بتعدل الموقع على GitHub مباشرة. محتاجة «مفتاح» من GitHub مرة واحدة بس:
+        <ol>
+          <li>افتحي <b>github.com</b> ← الصورة الشخصية ← <b>Settings</b> ← <b>Developer settings</b> ← <b>Personal access tokens</b> ← <b>Fine-grained tokens</b> ← <b>Generate new token</b>.</li>
+          <li>في <b>Repository access</b> اختاري <b>Only select repositories</b> واختاري ريبو الموقع بس.</li>
+          <li>في <b>Permissions</b> ← <b>Contents</b> اختاري <b>Read and write</b>، وبعدين <b>Generate token</b>.</li>
+          <li>انسخي المفتاح وحطيه هنا. المفتاح بيتحفظ على الجهاز ده بس، وماتبعتهوش لحد.</li>
+        </ol>
+      </div>
+      <div class="g3">
+        <label class="f">اسم الحساب على GitHub<input type="text" id="owner" dir="ltr" autocomplete="off" value="mohamedebrahimmahmoud93-prog"></label>
+        <label class="f">اسم الريبو<input type="text" id="repo" dir="ltr" autocomplete="off" value="bookbekia"></label>
+        <label class="f">الفرع<input type="text" id="branch" dir="ltr" autocomplete="off" value="main"></label>
+      </div>
+      <label class="f">المفتاح (Token)<input type="password" id="token" dir="ltr" autocomplete="off" placeholder="github_pat_..."></label>
+      <label class="row" style="font-size:14px"><input type="checkbox" id="remember" checked> افتكري المفتاح على الجهاز ده</label>
+      <div class="row"><button class="btn n" id="connect" type="button">ادخلي</button><button class="btn" id="demo" type="button">جربي اللوحة (معاينة من غير حفظ)</button><span id="loginMsg" class="status" style="color:var(--red)"></span></div>
+    </div>
+  </section>
+
+  <!-- اللوحة -->
+  <section id="panel" hidden>
+    <div class="warn" id="demoNote" hidden style="margin-bottom:12px">ده وضع معاينة: تقدري تجربي كل حاجة، بس التعديلات مش هتتنشر على الموقع. عشان تنشري لازم تدخلي بمفتاح GitHub بعد ما الموقع يترفع.</div>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" data-tab="books" aria-selected="true">الكتب</button>
+      <button class="tab" role="tab" data-tab="cats" aria-selected="false">الأقسام</button>
+      <button class="tab" role="tab" data-tab="texts" aria-selected="false">نصوص الصفحة</button>
+      <button class="tab" role="tab" data-tab="settings" aria-selected="false">الإعدادات</button>
+    </div>
+
+    <div data-pane="books" class="stack">
+      <div class="row">
+        <button class="btn y" id="addBook" type="button">+ كتاب جديد</button>
+        <input type="text" id="bkSearch" placeholder="دوري على كتاب…" style="max-width:280px">
+        <select id="bkCat" style="max-width:200px"></select>
+        <span class="status" id="bkCount" style="color:var(--soft)"></span>
+      </div>
+      <div class="list" id="bkList"></div>
+    </div>
+
+    <div data-pane="cats" class="stack" hidden>
+      <div class="help">اسم القسم بالعربي والإنجليزي ولونه وأيقونته. الصور اللي على كارت القسم بتتاخد من أول 3 كتب فيه.</div>
+      <div class="list" id="catList"></div>
+      <div><button class="btn y" id="addCat" type="button">+ قسم جديد</button></div>
+    </div>
+
+    <div data-pane="texts" class="stack" hidden>
+      <div class="help">في العنوان الكبير: الكلمة بين <b>[ ]</b> بتطلع صفرا، والكلمة بين <b>{ }</b> بتطلع تركواز، وكل سطر جديد بيبقى سطر جديد.</div>
+      <div class="card stack" id="txtList"></div>
+    </div>
+
+    <div data-pane="settings" class="stack" hidden>
+      <div class="card stack">
+        <label class="f">رقم الواتساب اللي بتوصله الطلبات<small>بالصيغة الدولية من غير + ، مثلاً 201224516429</small><input type="tel" id="wa" dir="ltr" inputmode="numeric"></label>
+        <div class="row"><button class="btn r sm" id="logout" type="button">اخرجي وامسحي المفتاح من الجهاز ده</button></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- تعديل كتاب -->
+<dialog id="bkDlg">
+  <form method="dialog" id="bkForm">
+    <div class="dh"><h2 id="bkDlgH">تعديل كتاب</h2><button class="btn sm" value="cancel" type="submit" formnovalidate>إغلاق</button></div>
+    <div class="db">
+      <div class="cover"><img id="fCoverImg" alt=""><div class="stack" style="gap:6px"><b>صورة الغلاف</b><input type="file" id="fCover" accept="image/*"><small style="color:var(--soft)">بتتصغر وتتحول لوحدها.</small></div></div>
+      <label class="f">اسم الكتاب<input type="text" id="fT" required maxlength="120"></label>
+      <label class="f">الوصف<textarea id="fS" maxlength="400"></textarea></label>
+      <div class="g3">
+        <label class="f">السعر (جنيه)<small>سيبيه فاضي لو «بنأكد السعر»</small><input type="number" id="fPrice" min="0" step="1"></label>
+        <label class="f">القسم<select id="fCat"></select></label>
+        <label class="f">السن<select id="fAge"></select></label>
+      </div>
+      <div class="g3">
+        <label class="f">علامة على الصورة<small>زي: جديد، مجموعة، بوكس</small><input type="text" id="fTag" maxlength="30"></label>
+        <label class="f">دار النشر<select id="fPub"><option value="sedra">دار سدرة</option><option value="">من غير</option></select></label>
+        <div class="stack" style="gap:6px;align-self:end">
+          <label class="row"><input type="checkbox" id="fOos"> نفدت حاليًا</label>
+          <label class="row"><input type="checkbox" id="fHidden"> مخفي من الموقع</label>
+        </div>
+      </div>
+      <details><summary style="cursor:pointer;font-weight:700">النسخة الإنجليزي</summary>
+        <div class="stack" style="margin-top:8px">
+          <label class="f">Title<input type="text" id="fEt" dir="ltr" maxlength="120"></label>
+          <label class="f">Description<textarea id="fEs" dir="ltr" maxlength="400"></textarea></label>
+          <label class="f">Tag<input type="text" id="fEtag" dir="ltr" maxlength="30"></label>
+        </div>
+      </details>
+      <div class="stack" style="gap:6px"><b>صور تانية للكتاب (صفحات من جوه)</b><div class="imgs" id="fGal"></div><input type="file" id="fGalAdd" accept="image/*" multiple></div>
+    </div>
+    <div class="df"><button class="btn r" id="fDel" type="button">امسحي الكتاب</button><span style="flex:1"></span><button class="btn" value="cancel" type="submit" formnovalidate>إلغاء</button><button class="btn y" id="fSave" value="save" type="submit">حفظ</button></div>
+  </form>
+</dialog>
+
+<!-- النشر -->
+<dialog id="pubDlg">
+  <div class="dh"><h2>نشر التعديلات</h2></div>
+  <div class="db"><p id="pubMsg" style="margin:0">بنرفع التعديلات…</p><div class="prog"><span id="pubBar"></span></div><div class="row" style="justify-content:flex-end"><button class="btn n" id="pubClose" type="button" hidden>تمام</button></div></div>
+</dialog>
+<div class="toast" id="toast" hidden role="status"></div>
+</body>
+</html>

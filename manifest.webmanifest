@@ -1,0 +1,26 @@
+{
+  "id": "./",
+  "name": "بوك بيكيا · كتب أطفال",
+  "short_name": "بوك بيكيا",
+  "description": "كتب أطفال جديدة من دار سدرة: أساسيات الدين، قصص القيم، السيرة، اليافعين، وكتب تربوية للآباء. اختاري حسب السن واطلبي على واتساب.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./?source=app",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#283467",
+  "categories": ["books", "education", "shopping", "kids"],
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icons/maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable"},
+    {"src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ],
+  "screenshots": [
+    {"src": "icons/shot-phone-1.png", "sizes": "824x1830", "type": "image/png", "form_factor": "narrow", "label": "الصفحة الرئيسية"},
+    {"src": "icons/shot-phone-2.png", "sizes": "824x1830", "type": "image/png", "form_factor": "narrow", "label": "الكتب"},
+    {"src": "icons/shot-wide.png", "sizes": "1280x800", "type": "image/png", "form_factor": "wide", "label": "بوك بيكيا على الكمبيوتر"}
+  ]
+}
